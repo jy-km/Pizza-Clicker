@@ -2,8 +2,8 @@ import pygame
 import math
 pygame.init()
 
-width = 500
-height = 500
+width = 1800
+height = 900
 screen = pygame.display.set_mode([width, height])
 running = True
 
