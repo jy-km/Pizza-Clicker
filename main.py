@@ -22,8 +22,9 @@ posx = 200
 posy = 200
 pos = pygame.mouse.get_pos()
 r = 100
-pizzanum = 2000
+pizzanum = 10000
 state = states["main"] 
+asdf = 2
 font = pygame.font.Font('freesansbold.ttf', 32)
 small_font = pygame.font.Font('freesansbold.ttf', 18)
 fever = 1
@@ -86,7 +87,7 @@ while running == True:
         state = states["main"]  
       if event.type == pygame.MOUSEBUTTONUP and event.button == 1:
         pos = pygame.mouse.get_pos()
-        (fever, feverTimer, kiss) = shop.shop(pos, fevertime_coords, chefs_kiss_coords, ovenbroven_coords, drovenovengonewrongcoords, pizzanum, fever, feverTimer, kiss)
+        (fever, feverTimer, kiss, pizzanum, asdf) = shop.shop(pos, fevertime_coords, chefs_kiss_coords, ovenbroven_coords, drovenovengonewrongcoords, animewaifucoords, pizzanum, fever, feverTimer, kiss, asdf)
 
     screen.fill((194, 175, 138))
     pygame.draw.rect(screen, (255, 255, 255), pygame.Rect(fevertime_coords[0][0], fevertime_coords[0][1], fevertime_coords[1][0]-fevertime_coords[0][0], fevertime_coords[1][1]-fevertime_coords[0][1]))
@@ -146,13 +147,26 @@ pygame.quit()
 #After 15 secs, the fever wil end
 #2.chef's kiss; hires the chef born and raised in italy(done)
 #3.oven broven; 50% chance for 20% more pizzas and 50% chance to lose all of the pizza (spelled broven but pronounced bruh-ven)(done)
-#4.droven oven gone wrong (cops called at 1am) (help me) (totally not clickbait); 1% chance to win the game by getting 50000000000 times more pizzas and 99% chance to lose all of the pizza
+#4.droven oven gone wrong (cops called at 1am) (help me) (totally not clickbait); 0.01% chance to win the game by getting 50000000000 times more pizzas and 99.99% chance to lose all of the pizza
 #5.anime waifu; your favorite waifu to help you buy stocks!
 
 # HW for this week
+# Irene: theres a lot of drawing functions in the game loop, but if we add more drawing stuff later, it gets repetitive and crowded. Come up with a function called draw or something where you can pass it the text as an argument/parameter and the coordinates and then have the function draw it there
+# tips: copy the current parts in the code that render/draw text
+
+# when you call it: draw('Waifu', (470,340))
+#def draw(variable name = (arguments, variables, coordinates): (small_font.render)
+
+# Jaeyoon: Choose 1
+# 1. Work on Anime Waifu Powerup
+# 2. Refactor your shop function so that you don't need to pass all the coordinates of the buttons
+#   For example, if you click on the "Fever" powerup, we wouldn't need the coordinates of any other buttons
 
 # future ideas
 # 1. Add a stocks system
 # - Jaeyoon has an idea on how to do stock prices
 # - 
 # 2. Maybe add more menus?
+
+def add(x,y):
+  return x+y

@@ -1,7 +1,7 @@
 import random
 import rect
 
-def shop(pos, fevertime_coords, chefs_kiss_coords, ovenbroven_coords, drovenovengonewrongcoords, pizzanum, fever, feverTimer, kiss):
+def shop(pos, fevertime_coords, chefs_kiss_coords, ovenbroven_coords, drovenovengonewrongcoords, animewaifucoords, pizzanum, fever, feverTimer, kiss, asdf):
   if (rect.inside_rect(pos, fevertime_coords)) == True: #fevertime
     if pizzanum - 200 >= 0:
       pizzanum = pizzanum - 200
@@ -23,6 +23,26 @@ def shop(pos, fevertime_coords, chefs_kiss_coords, ovenbroven_coords, drovenoven
       else:
         print("EPIC FAIL")
   if (rect.inside_rect(pos, drovenovengonewrongcoords)) == True:
-    print('asdf')
-  return (fever, feverTimer, kiss)
-            
+    if pizzanum - 800 >= 0:
+      pizzanum -= 800
+      randintrandom = random.randint(1,100000)
+      if randintrandom == 50000:
+        pizzanum = pizzanum + 1000000000
+        print("you succeeded :)")
+      else:
+        pizzanum = 0
+        print("PITIFUL FAIL")
+  if (rect.inside_rect(pos, animewaifucoords)) == True:
+    if pizzanum - 1000 >= 0:
+      pizzanum -= 1000
+
+      randintrandomrare = random.randint(1,asdf)
+      if randintrandomrare == 1:
+        pizzanum = pizzanum + 1000000
+        asdf = asdf ** 2
+        print(asdf)
+        print("You have got your waifu's love and her blessings have given you loads of pizzas.")
+      else:
+        print("Your heart is broken because your waifu didn't like you. Sad.")
+  return (fever, feverTimer, kiss, pizzanum, asdf)
+  
